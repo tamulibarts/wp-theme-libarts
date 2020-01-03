@@ -1,0 +1,62 @@
+section#facts {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  article {
+    @extend .col-12;
+    @extend .col-lg-4;
+
+    color: #fff;
+    display: flex;
+    margin: 45px 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+
+    h3 {
+      color: #fff;
+      font-family: $tungsten;
+      text-transform: uppercase;
+      line-height: 100%;
+    }
+
+    figure {
+      width: 40%;
+      height: 150px;
+      order: 1;
+      margin: 0 30px 0 0;
+      max-height: 200px;
+      text-align: center;
+
+      svg {
+        width: 100%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 30px;
+      }
+    }
+
+    div {
+      width: 60%;
+      font-size: 0.8rem;
+      order: 2;
+
+      a {
+        font-weight: 600;
+        color: #fff;
+
+        &::after {
+          content: "\f30b";
+          font-family: $fontawesome;
+          font-weight: 400;
+          margin-left: 5px;
+          // content: "<i class="fas fa-search"></i>";
+        }
+      }
+    }
+  }
+}

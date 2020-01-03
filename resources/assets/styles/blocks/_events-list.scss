@@ -1,0 +1,43 @@
+article.event {
+  > div {
+    position: relative;
+    .date {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 33.3%;
+      height: 100%;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      span {
+        color: #fff;
+        font-family: $tungsten;
+        font-size: 2.1rem;
+        line-height: 90%;
+        text-transform: uppercase;
+        &.day {
+          font-size: 5.4rem;
+          font-weight: 900;
+        }
+      }
+    }
+
+    figure {
+      &:after {
+        content: ' ';
+        position: absolute;
+        background-color: $maroon;
+        opacity: 0.73;
+        width: 33.3%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

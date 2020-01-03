@@ -1,0 +1,11 @@
+.wp-block-columns {
+  &.alignfull, &.alignwide {
+    padding: 0 15px;
+    margin: 0 -15px;
+    justify-content: center;
+  }
+
+  &.is-style-maroon-background {
+    background-color: $maroon;
+  }
+}

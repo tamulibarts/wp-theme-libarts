@@ -1,0 +1,80 @@
+section#department-list {
+  .department-content {
+    @extend .row;
+
+    .callout {
+      @extend .col-md-4;
+    }
+
+    .department-list {
+      @extend .col-md-8;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0 30px;
+    column-count: 1;
+
+    li {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 10px;
+
+      a {
+        // border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 80px;
+        position: relative;
+        border: none;
+
+        span {
+          height: 55px;
+          vertical-align: middle;
+          position: absolute;
+          width: 100%;
+          border-left: 50px solid white;
+          padding-left: 35px;
+          z-index: 1;
+          font-family: "Tungsten A", "Tungsten B", sans-serif;
+          text-transform: uppercase;
+          color: black;
+          font-size: 1.6rem;
+          line-height: 1.4rem;
+          font-weight: 500;
+          letter-spacing: 1px;
+          display: flex;
+          align-items: center;
+          transition: all 200ms ease-in-out;
+          border-top-right-radius: 27px;
+          border-bottom-right-radius: 27px;
+        }
+      }
+
+      &:hover {
+        a {
+          span {
+            background-color: #500000;
+            color: white;
+          }
+
+          svg {
+            .color-fill {
+              fill: $red;
+            }
+
+            .stroke-grow {
+              stroke-width: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      column-count: 2;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+article.cta {
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  // max-height: 325px; 
+    .cta-container {
+        position: relative;
+
+        .media-container {
+           
+            overflow: hidden;
+
+            > .media-filter, video, img {
+                position: absolute;
+                width: 100%; height: 100%;
+            }
+
+            .media-filter {
+                background: radial-gradient(ellipse, transparent, rgba(0, 0, 0, 0.6));
+                z-index: 5; 
+            }
+
+            video, img {
+                object-fit: cover;
+                z-index: 4;
+            }
+        }
+
+        .text-container {
+            position: relative; 
+            // top: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 6;
+            padding: 30px;
+
+            @include media-breakpoint-up(md) {
+              padding-top: 60px;
+              padding-bottom: 60px;
+            }
+            
+            .poster {
+              position: relative; 
+              height: 100%;
+              display: flex;
+              justify-content: space-around; 
+              align-items: center;
+              flex-direction: column;
+
+              h1, h2 {
+                color: #fff;
+                text-transform: uppercase;  
+                text-align: center;
+                text-shadow: 3px 3px 5px rgba(0,0,0,0.71);
+                margin-top: 0;
+              }
+
+              h1 {
+                font-family: $moriston;
+                font-size: 3.0rem; 
+                margin-bottom: 5px;
+                font-weight: 800;
+              }
+
+              h2 {
+                font-family: $body; 
+                font-size: 1.5rem;
+                margin-bottom: 50px;
+                font-weight: 600;
+              }
+
+              .wp-block-button {
+                box-shadow: 3px 3px 5px rgba(0,0,0,0.51);
+
+                a {
+                  &:after {
+                    margin-left: 10px;
+                    font-family: $fontawesome;
+                    content: '\f30b';
+                    // font-size: 1rem;
+                    font-weight: 100;
+                  }
+                }
+              }
+            }
+        }
+    }
+}

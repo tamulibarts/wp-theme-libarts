@@ -1,0 +1,49 @@
+
+.directory-group {
+  @extend .row;
+  article.person {
+    @extend .col-lg-6;
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 30px;
+    padding: 10px;
+    padding-right: 30px;
+    
+    .img img {
+      width: 100px;
+      height: 100px;
+      min-width: 100px;
+      min-height: 100px;
+      margin-top: 5px;
+      border: 1px solid $grey-med;
+      background-color: $grey-lt;
+    }
+    .info {
+      flex: 1 1 auto;
+      margin-left: 15px;
+      h3 {
+        font-family: $tungsten;
+        font-size: 29px;
+        color: $maroon;
+        border-bottom: 2px solid $red;
+        text-transform: uppercase;
+        margin-bottom: 0.2rem;
+      }
+      span {
+        font-family: $moriston;
+        font-size: 10px;
+        display: block;
+        &.title {
+          font-size: 14px;
+          font-weight: 200;
+        }
+        a {
+          border-bottom-width: 0px;
+          &:hover {
+            border-bottom-width: 1px;
+          }
+        }
+      }
+    }
+  }
+}

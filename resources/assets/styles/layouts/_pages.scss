@@ -1,0 +1,19 @@
+.container {
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+@include media-breakpoint-up(md) {
+  main {
+    display: block;
+  }
+  .sidebar {
+    order: 1 !important;
+    margin-top: 0;
+  }
+}
+

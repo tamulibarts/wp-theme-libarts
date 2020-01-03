@@ -1,0 +1,49 @@
+@mixin button-link-style {
+  font-family: $tungsten;
+  background-color: $maroon;
+  border: 2px solid $red;
+  color: white;
+  border-radius: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  transition: all 150ms ease;
+  &:hover {
+    color: $maroon;
+    background-color: white;
+  }
+
+  &.has-white-background-color {
+    color: $maroon;
+    background-color: white;
+
+    &:hover {
+      color: white;
+      background-color: $maroon;
+    }
+  }
+}
+
+.wp-block-button {
+  margin: 15px 0px;
+  a, .wp-block-button__link {
+    @include button-link-style();
+  }
+
+  &.is-style-small-button {
+    a, .wp-block-button__link {
+      font-size: 0.9rem;
+      padding: 0.5rem 2.5rem;
+    }
+  }
+
+  &.is-style-large-button {
+    a, .wp-block-button__link {
+      font-size: 1.5rem;
+      padding: 1rem 3rem;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,23 @@
+div.img-404-container {
+  background-color: $maroon;
+  height: 225px;
+  text-align: center;
+  display: flex;
+  justify-items: center;
+  overflow: hidden;
+  padding: 20px;
+  margin-bottom: 50px;
+  > div {
+    margin: 0 auto;
+    height: 325px;
+  }
+}
+
+div.text-404 {
+  margin-bottom: 50px;
+
+  h3, h4 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,187 @@
+footer {
+  @extend .container-fluid;
+  background-color: $maroon;
+  padding-bottom: 40px;
+  color: #fff;
+
+  .footer-menus {
+    // @extend .row;
+
+    .footer-social {
+      @extend .d-inline-flex, .col-lg-3, .order-3, .order-lg-2;
+      justify-content: space-around;
+      // margin-bottom: 30px;
+      a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        color: white;
+        font-size: 24px;
+        line-height: 20px;
+        margin: 10px;
+        padding: 6px;
+        text-align: center;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        background-color: $grey-dark;
+        transition: all 150ms ease;
+        &:hover, &:focus {
+          background-color: white;
+          color: $red;
+          border-color: $red;
+        }
+      }
+    }
+
+    .footer-nav {
+      display: inline-block;
+      font-family: $tungsten;
+      font-size: 28px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      margin-bottom: 0;
+
+      @extend .col-12, .col-lg-8;
+
+      // li {
+      //   line-height: 100%;
+      //   margin: 10px 0;
+
+      //   a {
+      //     text-align: right;
+      //   }
+      // }
+
+      > ul {
+        margin: 10px 0;
+        padding-left: 0;
+        background-color: $maroon;
+        border-bottom: 4px solid $maroon;
+        box-shadow: none;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        > li {
+          padding: 5px;
+          width: 100%;
+          > a {
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            display: block;
+            transition: all 150ms ease;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            &:hover, &:focus {
+              outline: none;
+              span {
+                border-bottom: 4px solid $red;
+              }
+            }
+          }
+
+          &.active {
+            span {
+              border-bottom: 4px solid $red;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        > ul {
+          display: flex !important;
+          flex-direction: row;
+          justify-content: space-between;
+          border-bottom: none;
+          box-shadow: none;
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    @extend .row;
+    // display: flex;
+    // flex-direction: column;
+    // width: 100%;
+    padding-top: 30px;
+    .logo {
+      @extend .col-12, .col-lg-6, .mt-auto, .order-lg-2;
+      img {
+        max-height: 75px;
+      }
+    }
+
+    .legal {
+      @extend .col-12, .col-lg-6, .mt-auto, .order-lg-1;
+      font-size: 0.7rem;
+      padding: 15px;
+      text-align: center;
+      a, a:visited {
+        color: white;
+        border-bottom-color: transparent;
+        margin-right: 5px;
+        padding-right: 5px;
+        border-right: 1px solid white;
+
+        &:last-of-type {
+          border-right: none;
+          padding-right: 0;
+          margin-right: 0;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+
+  #footer-menu-megamenus {
+    background-color: white;
+    width: 100%;
+  }
+
+  .menu-panel {
+    background-color: rgba($maroon, 0.8);
+    display: none;
+    width: 100%;
+    ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: top;
+      text-align: center;
+      margin-left: 0;
+      padding-left: 0;
+      li {
+        flex: 0 1 30px;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        a, a:visited {
+          color: white;
+          border-bottom-color: transparent;
+          font-size: 0.8rem;
+          &:after {
+            display: none;
+          }
+        }
+
+        a:hover, a:focus {
+          outline: none;
+          border-bottom-color: $red;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        text-align: left;
+        max-height: 225px;
+      }
+    }
+  }
+}

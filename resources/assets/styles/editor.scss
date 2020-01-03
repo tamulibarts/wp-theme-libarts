@@ -1,0 +1,69 @@
+@import "common/variables";
+
+@import "~bootstrap/scss/bootstrap";
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
+
+@import "fonts/moriston";
+@import "common/fonts";
+@import "components/menu_panel.mixin";
+
+/** Import theme styles */
+// @import "common/global";
+@import "common/typography";
+@import "common/svg";
+@import "components/menus";
+@import "components/buttons";
+@import "components/comments";
+@import "components/forms";
+@import "components/wp-classes";
+
+@import "components/sections/department_list";
+@import "components/sections/events";
+@import "components/sections/facts";
+
+// @import "layouts/home";
+// @import "layouts/header";
+// @import "layouts/sidebar";
+// @import "layouts/footer";
+// @import "layouts/pages";
+// @import "layouts/posts";
+// @import "layouts/tinymce";
+
+// Blocks
+@import "blocks/award";
+@import "blocks/call-to-action";
+@import "blocks/callout";
+@import "blocks/columns";
+@import "blocks/department-list";
+@import "blocks/events-list";
+@import "blocks/feature";
+@import "blocks/heading";
+@import "blocks/paragraph";
+@import "blocks/profile";
+@import "blocks/recent-posts";
+// .wp-block {
+//   overflow: hidden;
+// }
+
+/* Main column width */
+.wp-block {
+    max-width: 1140px;
+}
+ 
+/* Width of "wide" blocks */
+// .wp-block[data-align="wide"] {
+//     max-width: 1080px;
+// }
+ 
+// /* Width of "full-wide" blocks */
+// .wp-block[data-align="full"] {
+//     max-width: none;
+// }
+

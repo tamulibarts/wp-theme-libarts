@@ -1,0 +1,57 @@
+@mixin menu-panel-style {
+  ul {
+    list-style: none;
+    font-family: $moriston;
+    li {
+      margin-bottom: 15px;
+      a {
+        &:after {
+          position: absolute;
+          margin-left: 10px;
+          content: '\f0da';
+          font-family: $fontawesome;
+          color: $maroon;
+          font-size: 0.8em;
+          line-height: 2em;
+          font-weight: 100;
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .wp-block-columns {
+    margin-bottom: 0;
+  }
+
+  h2:first-of-type, h3:first-of-type {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  h3, h4 {
+    margin-bottom: 1rem;
+  }
+
+  .wp-block-image:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .wp-block-column:last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .wp-block-button {
+    margin-top: 1.5rem;
+  }
+}

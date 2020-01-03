@@ -1,0 +1,23 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+$theme-colors: (
+  primary: #525ddc
+);
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+$maroon: #500000;
+$red:    #e4002b;
+$grey-dark: #332c2c;
+$grey-med:  #707373;
+$grey-lt:   rgb(230, 230, 230);
+$grey-faint: rgb(245, 245, 245);
+$yellow: #fce300;
+
+$tungsten: "Tungsten A", "Tungsten B", sans-serif;
+$moriston: "Moriston", sans-serif;
+$body: 'Open Sans', sans-serif;
+$fontawesome: "Font Awesome 5 Pro";

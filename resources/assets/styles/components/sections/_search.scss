@@ -1,0 +1,107 @@
+.archive-list {
+  article {
+    position: relative;
+    border: 1px solid $grey-lt;
+    padding: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    transition: all 150ms ease;
+
+    figure {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        margin-right: 3em;
+        margin-bottom: 0;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+    > a {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 2;
+      border: none;
+    }
+    .article-body {
+      width: 100%;
+      header {
+        display: flex;
+        flex-direction: column;
+        h2 {
+          font-family: $moriston;
+          order: 2;
+          font-size: 2rem;
+          font-weight: 500;
+          padding-bottom: 10px;
+          border-bottom: 2px solid $red;
+          margin-bottom: 15px;
+          margin-top: 10px;
+          display: block;
+          width: 100%;
+        }
+        time {
+          font-family: $tungsten;
+          font-size: 2rem;
+          line-height: 2rem;
+          color: $grey-med;
+          order: 1;
+        }
+      }
+
+      p {
+        font-size: 24px;
+        color: $grey-med;
+        font-style: italic;
+
+        a:last-of-type {
+          display: none;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: #ebebeb;
+    }
+  }
+}
+
+.posts-navigation {
+  margin-bottom: 30px;
+
+  .nav-links {
+    display: flex;
+    > div {
+      display: inline-block;
+      @extend .wp-block-button;
+    }
+
+    .nav-previous {
+      order: 2;
+      margin-left: auto;
+      a:after {
+        margin-left: 10px;
+        font-family: $fontawesome;
+        font-weight: 100;
+        content: '\f30b'; // long-arrow-alt-right
+      }
+    }
+
+    .nav-next {
+      a:before {
+        margin-right: 10px;
+        font-family: $fontawesome;
+        font-weight: 100;
+        content: '\f30a'; // long-arrow-alt-left
+      }
+    }
+  }
+}

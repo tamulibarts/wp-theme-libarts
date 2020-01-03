@@ -1,0 +1,31 @@
+.page-header h1, h2.line, h2.is-style-line-title, .editor-post-title__block textarea {
+  color: $maroon;
+  text-transform: uppercase;
+  text-align: left;
+  position: relative;
+  display: block;
+  margin-right: -30px;
+  margin-bottom: 50px;
+
+  &::after {
+    position: absolute;
+    transform: translateY(1.2rem);
+    width: 100em;
+    content: " ";
+    height: 3px;
+    background-color: $red;
+    margin-left: 20px;
+  }
+}
+
+.page-header h1 {
+  &::after {
+    transform: translateY(1.4rem);
+  }
+}
+
+.editor-post-title__block textarea {
+  font-family: $tungsten;
+  font-weight: normal;
+  width: auto !important;
+}

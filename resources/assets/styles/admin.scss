@@ -1,0 +1,18 @@
+@import "common/variables";
+@import "components/menu_panel.mixin";
+
+.editor-styles-wrapper {
+  overflow: hidden;
+}
+
+.edit-post-sidebar {
+  .block-editor-url-input input[type=text] {
+    width: 100% !important;
+  }
+}
+
+body.single-menu_panel {
+  .editor-styles-wrapper {
+    @include menu-panel-style;
+  }
+}
