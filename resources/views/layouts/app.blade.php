@@ -5,7 +5,7 @@
     @php do_action('get_header') @endphp
     @include('partials.header')
     <div class="wrap container" role="document">
-      @include('partials.breadcrumbs')
+      @yield('breadcrumbs')
       <div class="content">
         <main id="main" class="main">
           @yield('content')

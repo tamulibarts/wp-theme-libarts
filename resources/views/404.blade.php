@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('breadcrumbs')
+  @include('partials.breadcrumbs')
+@endsection
+
 @section('content')
 
   @if (!have_posts())

@@ -1,4 +1,3 @@
-@if(!is_front_page())
 <nav aria-label="Breadcrumbs" class="breadcrumbs">
   <ol>
     <li><a href="{{$homeurl}}">Home</a></li>
@@ -9,4 +8,3 @@
     @endforeach
   </ol>
 </nav>
-@endif
