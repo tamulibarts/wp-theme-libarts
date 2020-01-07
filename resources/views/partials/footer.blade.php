@@ -22,8 +22,15 @@
             <span>Centers and Institutes</span>
           </a>
         </li>
-        <li>
-          <a role="button" tabindex="0" aria-controls="contact-megamenu" aria-expended="false" aria-pressed="false">Contact Us</a>
+        <li class="has-megamenu">
+          <a class="menu-item-title" 
+              role="button" tabindex="0"
+              data-menu-group="footer-menu-megamenus"
+              aria-controls="footer-contact-megamenu" 
+              aria-expanded="false" 
+              aria-pressed="false">
+            <span>Contact Us</span>
+          </a>
         </li>
       </ul>
     </nav>
@@ -68,6 +75,12 @@
             <li><a href="http://ppri.tamu.edu" target="_blank">Public Policy Research Institute</a></li>
             <li><a href="http://resi.tamu.edu" target="_blank">Race and Ethnic Studies Institute</a></li>
           </ul>
+        </div>
+      </nav>
+
+      <nav class="menu-panel" id="footer-contact-megamenu" aria-label="Information on how to contact the College of Liberal Arts" tabindex="0">
+        <div class="menu-panel-content">
+          {!! $contact_us_panel_content !!}
         </div>
       </nav>
     </div>

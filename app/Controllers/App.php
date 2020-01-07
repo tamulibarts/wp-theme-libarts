@@ -39,5 +39,15 @@ class App extends Controller
         return get_home_url();
     }
 
+    public function contact_us_panel_content() {
+        $the_post = get_field('contact_us_menu_panel', 'option');
+        if($the_post) {
+            $post = $the_post;
+            setup_postdata( $post );
+            return get_the_content();
+        }
+        return "";
+    }
+
     use Partials\Breadcrumbs;
 }
