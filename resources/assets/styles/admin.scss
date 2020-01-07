@@ -16,3 +16,7 @@ body.single-menu_panel {
     @include menu-panel-style;
   }
 }
+
+.edit-post-editor-regions__content {
+  display: block !important;
+}
