@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-items: right;
-  padding: 3rem;
+  // padding: 3rem;
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,7 +26,7 @@
   margin-left: -15px;
   margin-right: -15px;
   min-height: 300px;
-  width: 100%;
+  // width: 100%;
   div, a {
     color: black;
   }
@@ -34,7 +34,9 @@
   @include media-breakpoint-up(md) {
     margin-left: 0;
     margin-right: 0;
+    padding: 3rem;
   }
+
   .synops {
     margin-top: 15px;
     border-top: 1px solid $maroon;
@@ -63,7 +65,9 @@
       text-decoration: none;
       border-bottom: none;
     }
-
+    @include media-breakpoint-up(lg) {
+      margin: 3rem;
+    }
     @include media-breakpoint-up(lg) {
       flex-direction: row;
       h1 {
@@ -72,7 +76,11 @@
     }
   }
   .cover-img {
-    @include media-breakpoint-up(md) {
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+    @include media-breakpoint-up(lg) {
       height: auto;
       flex-basis: 33%;
       img {
