@@ -20,3 +20,7 @@ body.single-menu_panel {
 .edit-post-editor-regions__content, .edit-post-layout__content {
   display: block !important;
 }
+
+th[data-type="unique_id"],td[data-type="unique_id"] {
+  display: none;
+}
