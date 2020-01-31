@@ -136,3 +136,33 @@ function display_sidebar()
     isset($display) || $display = apply_filters('sage/display_sidebar', false);
     return $display;
 }
+
+/**
+ * Checks if asset exist.
+ *
+ * @param string $asset Full file path of the asset.
+ *
+ * @return bool
+ */
+function asset_exist( $asset ) {
+    if ( file_exists( asset_file( $asset ) ) )
+        return true;
+
+    return false;
+}
+
+/**
+ * Retrieve full path to asset file
+ *
+ * @example /Users/username/Sites/test.ch/web/app/themes/themefolder/dist/styles/main.css
+ *
+ * @param string $asset Filename including subfolder after 'dist/' like 'styles/main.css'
+ *
+ * @return string
+ */
+function asset_file( $asset ) {
+    $asset_file     = sage( 'assets' )->get( $asset );
+    $asset_filepath = str_replace( 'resources', '', get_stylesheet_directory() ) . "dist/{$asset_file}";
+
+    return $asset_filepath;
+}
