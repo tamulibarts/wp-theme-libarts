@@ -9,12 +9,9 @@
     @include('partials.page-header')
     @include('partials.sidebar')
     <div class="content">
-    @debug('hierarchy')
-      <div class="directory-group">
-        @foreach( $profile_groups as $profile_group )
-          @include('partials.profile_group')
-        @endforeach
-      </div>
+      @foreach( $profile_groups as $profile_group )
+        @include('partials.profile_group')
+      @endforeach
     </div>
   @endwhile
 @endsection

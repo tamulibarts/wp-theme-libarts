@@ -9,11 +9,12 @@ class SingleDirectory_group extends Controller
   public function profile_groups()
   {
     $profile_groups = array();
+    global $post;
 
     if( class_exists( '\LA\Directory\GroupCPT' ) ):
       $grouping = new \LA\Directory\GroupCPT( $post );
       $profile_groups = [ [ 'profiles' => $grouping->profiles(), 'grouping' => $grouping ] ];
-      
+
       while( have_rows( 'grouping_embedded_groupings' ) ): the_row();
         $id = get_sub_field('grouping_embedded_groupings_grouping_id');
         if($id) {
@@ -35,7 +36,9 @@ class SingleDirectory_group extends Controller
     endif;
     // $areas = get_field('profile_areas', 'options');
     return $profile_groups;
-    
-    
+  }
+
+  public function profile_name_format() {
+    return get_field( 'grouping_profile_name_format' );
   }
 }
