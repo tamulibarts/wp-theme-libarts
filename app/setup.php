@@ -12,7 +12,18 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    $cssver = md5_file( asset_file('main.css') );
+    if(WP_ENV == 'production') {
+        $cssver = md5_file( asset_file('main.css') );
+        $csspath = asset_path('main.css');
+        $jsver = md5_file( asset_file('main.js') );
+        $jspath = asset_path('main.js');
+    } else {
+        $cssver = md5_file( asset_file('main.css') );
+        $csspath = asset_path('main.css');
+        $jsver = md5_file( asset_file('main.js') );
+        $jspath = asset_path('main.js');
+    }
+
     wp_enqueue_style(
         'main.css',
         asset_path('main.css'),
@@ -20,7 +31,6 @@ add_action('wp_enqueue_scripts', function () {
         $cssver
     );
 
-    $jsver = md5_file( asset_file('main.js') );
     wp_enqueue_script(
         'main.js',
         asset_path('main.js'),
