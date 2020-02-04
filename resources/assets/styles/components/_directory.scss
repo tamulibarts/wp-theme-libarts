@@ -2,7 +2,7 @@
 .directory-group {
   display: flex;
   flex-wrap: wrap;
-  
+
   article.person {
     @extend .col-lg-6;
     margin-top: 20px;
@@ -45,6 +45,9 @@
           &:hover {
             border-bottom-width: 1px;
           }
+        }
+        ul {
+          margin-bottom: 0;
         }
       }
     }
