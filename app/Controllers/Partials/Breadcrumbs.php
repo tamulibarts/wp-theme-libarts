@@ -9,17 +9,19 @@ trait Breadcrumbs
       $post = get_post();
       $parent_ids = get_post_ancestors( $post );
       $breadcrumbs = array();
-      $parents = array();
 
       if( !empty( $parent_ids ) ):
-      foreach( get_posts( array( 'post_type' => 'page', 'post__in' => $parent_ids, 'orderby' => 'post__in' ) ) as $p) {
-        $parents[] = $p;
-        $breadcrumbs[] = (object) array(
-          'title' => $p->post_title,
-          'link' => get_page_link( $p )
-        );
-      }
+        foreach( get_posts( array( 'post_type' => 'page', 'post__in' => $parent_ids ) ) as $p) {
+          $breadcrumbs[] = (object) array(
+            'post_id' => $p->ID,
+            'title' => $p->post_title,
+            'link' => get_page_link( $p )
+          );
+          error_log( $p->post_title );
+        }
       endif;
+
+      $breadcrumbs = array_reverse($breadcrumbs);
 
       $breadcrumbs[] = (object) array(
         'title' => get_the_title(),
