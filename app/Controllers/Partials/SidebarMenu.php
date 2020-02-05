@@ -17,12 +17,10 @@ trait SidebarMenu
       $content = '';
 
       $style = get_field( 'menu_style', $post );
-      error_log("Generating menu for " . $post->post_title);
-      error_log("Menu style is " . $style);
 
       if($style == 'inherit' )
         list($style, $context)  = $this->inherited_menu_style($post);
-      error_log("Menu style is " . $style);
+
       switch( $style ) {
         case "custom":
           $content = wp_nav_menu( array(
@@ -31,13 +29,10 @@ trait SidebarMenu
           ) );
           break;
         case "auto":
-          error_log("building auto tree");
           $tree = $this->build_page_tree($post);
-          error_log( print_r( $tree, true ) );
           $content = $this->generate_menu_markup($tree, $post);
           break;
         default: // case: "inherit"
-          error_log("Inheriting menu style from " . $post->post_title);
           if($post->post_parent > 0) {
             $parent = get_post($post->post_parent);
             $content = $this->sidebar_content( $parent, $post );
