@@ -194,3 +194,12 @@ add_action( 'save_post', function( $post_id=null, $post=null, $update=false ) {
     }
   }
 );
+
+add_filter( 'the_title', function($title, $post_id, $view=null) {
+    if($view == 'nestedpages_title') {
+      if( get_post_meta($post_id, '_la_unlisted') ) {
+        $title = $title . " <strong><em>(excluded from menu)</em></strong>";
+      }
+    }
+    return $title;
+}, 10, 3);
