@@ -60,7 +60,15 @@ trait SidebarMenu
     private function build_page_tree($post = null) {
       if(!$post) $post = get_post();
       
-      $children = get_pages( array( 'child_of' => $post->ID ) );
+      $children = get_pages( array(
+        'child_of' => $post->ID,
+        'meta_query' => [
+          [
+            'key' => '_la_unlisted',
+            'compare' => 'NOT EXISTS'
+          ]
+        ]
+      ));
       // error_log("Children: " . print_r($children, true));
       
       $parent_id = wp_get_post_parent_id($post);
