@@ -45,6 +45,23 @@ class SingleDirectory_group extends Controller
     return get_field( 'grouping_profile_name_format' );
   }
 
+  public function breadcrumbs() {
+      $breadcrumbs = array(
+        (object) array(
+          'title' => 'Directory',
+          'link' => '/people/'
+        )
+      );
+
+      $breadcrumbs[] = (object) array(
+        'title' => get_the_title(),
+        'link' => get_post_permalink(),
+        'current' => true
+      );
+
+      return $breadcrumbs;
+  }
+
   public function has_sidebar() {
     return true;
   }
