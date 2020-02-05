@@ -10,10 +10,10 @@ trait SidebarMenu
 
     public function sidebar_content($post = null, $context = null)
     {
-      
+
       if(!$post) $post = get_post();
       if(!$context) $context = $post;
-      
+
       $content = '';
 
       $style = get_field( 'menu_style', $post );
