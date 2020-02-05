@@ -6,6 +6,9 @@ use Sober\Controller\Controller;
 
 class SingleDirectory_group extends Controller
 {
+
+  use Partials\SidebarMenu;
+
   public function profile_groups()
   {
     $profile_groups = array();
@@ -40,5 +43,38 @@ class SingleDirectory_group extends Controller
 
   public function profile_name_format() {
     return get_field( 'grouping_profile_name_format' );
+  }
+
+  public function has_sidebar() {
+    return true;
+  }
+
+  public function sidebar_content() {
+    if(!@$post) $post = get_post();
+
+    $collection = get_posts( array(
+      'post_type' => "directory_group",
+      'post_status' => "publish",
+      'orderby' => 'menu_order',
+      'order' => 'asc',
+      'posts_per_page' => -1,
+      'meta_query' => [
+        [
+          'key' => '_la_unlisted',
+          'compare' => 'NOT EXISTS'
+        ]
+      ]
+    ) );
+
+    // Convert to format for generate_menu_markup
+    $tree = array();
+    foreach($collection as $page) {
+      $tree[] = array(
+        'post' => $page
+      );
+    }
+
+    $content = $this->generate_menu_markup($tree, $post);
+    return $content;
   }
 }
