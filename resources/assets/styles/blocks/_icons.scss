@@ -1,0 +1,17 @@
+.wp-block-libarts-fa-icon {
+  &.is-style-large {
+    span {
+      font-size: 64px !important;
+    }
+  }
+
+  &.is-style-default {
+    span {
+      font-size: inherit !important;
+    }
+  }
+
+  &.is-style-custom {
+    
+  }
+}
