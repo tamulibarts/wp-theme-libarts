@@ -163,3 +163,34 @@ add_action( 'acf/init', function() {
 add_action('init', function() {
     register_meta('post', 'disable_featured_image', array('show_in_rest' => true, 'single' => true, 'type' => 'boolean', ));
 });
+
+add_action( 'post_submitbox_misc_actions', function() {
+    $post_id = get_the_ID();
+
+    // Add an unlisted checkbox. Some post types will check for this and exclude from the sidebar collection
+    $value = get_post_meta($post_id, '_la_unlisted', true);
+    // wp_nonce_field('my_custom_nonce_'.$post_id, 'my_custom_nonce');
+    ?>
+    <div class="misc-pub-section misc-pub-section-last">
+        <label><input type="checkbox" value="1" <?php checked($value, true, true); ?> name="_la_unlisted" />Unlisted</label>
+    </div>
+    <?php
+  }
+);
+
+add_action( 'save_post', function( $post_id=null, $post=null, $update=false ) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    if( isset( $_POST['_la_unlisted'] ) ) {
+        update_post_meta($post_id, '_la_unlisted', $_POST['_la_unlisted']);
+    } else {
+        delete_post_meta($post_id, '_la_unlisted');
+    }
+  }
+);
