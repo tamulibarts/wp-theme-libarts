@@ -172,7 +172,7 @@ add_action( 'post_submitbox_misc_actions', function() {
     // wp_nonce_field('my_custom_nonce_'.$post_id, 'my_custom_nonce');
     ?>
     <div class="misc-pub-section misc-pub-section-last">
-        <label><input type="checkbox" value="1" <?php checked($value, true, true); ?> name="_la_unlisted" />Unlisted</label>
+        <label><input type="checkbox" value="1" <?php checked($value, true, true); ?> name="_la_unlisted" />Exclude from sidebar menus</label>
     </div>
     <?php
   }
