@@ -67,8 +67,10 @@ trait SidebarMenu
             'key' => '_la_unlisted',
             'compare' => 'NOT EXISTS'
           ]
-        ]
+          ],
+        'orderby' => 'menu_order',
       ));
+      $children = array_reverse($children);
       // error_log("Children: " . print_r($children, true));
       
       $parent_id = wp_get_post_parent_id($post);
