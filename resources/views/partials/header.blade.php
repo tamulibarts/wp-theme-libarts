@@ -5,8 +5,12 @@
     </a>
     <div id="logo-container">
       <span class="sr-only">{{ get_bloginfo('name', 'display') }}</span>
-      <div class="logo">
-        <img src="{{ get_template_directory_uri() }}/assets/images/CLA Logo.svg" desc="College of Liberal Arts" />
+      <div class="tamulogo">
+        <a href="https://www.tamu.edu" target="_new"><img src="{{ get_template_directory_uri() }}/assets/images/TAMU_BLOCK.svg" desc="Texas A&M University" /></a>
+      </div>
+      <div class="unitlogo">
+        <div class="major"><a href="https://www.tamu.edu" target="_new">Texas A&M University</a></div>
+        <div class="minor"><a href="{{ get_home_url() }}">College of Liberal Arts</a></div>
       </div>
     </div>
     <nav aria-label="Main Menu" id="main-menu">

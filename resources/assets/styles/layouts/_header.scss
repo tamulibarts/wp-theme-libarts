@@ -36,17 +36,80 @@ header {
   
 
   #logo-container {
+    padding: 40px 10px;
     @extend .order-3;
     width: 100%;
     overflow: hidden;
     background-color: #500000;
     z-index: 1;
     position: relative;
-    .logo {
-      margin: 50px 30px;
-      z-index: 3;
+    display: flex;
+    justify-content: flex-start;
 
-      &::after {
+    a {
+      color: white;
+      &:visited {
+        color: white;
+      }
+      &:active {
+        color: red;
+      }
+      &:hover {
+        border-bottom: 2px solid red;
+      }
+    }
+    .tamulogo {
+      border-right: 2px solid white;
+      margin-right: 25px;
+      a {
+        display: flex;
+        align-content: center;
+      }
+      img {
+        height: 100px;
+      }
+    }
+    .unitlogo {
+      font-family: 'Open Sans';
+      color: white;
+      .major {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1rem;
+        text-transform: uppercase;
+      }
+      .minor {
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 20px 30px;
+      height: 210px;
+      .tamulogo {
+        img {
+          height: 120px;
+        }
+      }
+
+      .unitlogo {
+        .major {
+          margin-bottom: 0px;
+          font-size: 1.4rem;
+          line-height: 1rem;
+        }
+        .minor {
+          font-size: 3rem;
+          line-height: 4.5rem;
+        }
+      }
+    }
+
+    &::after {
       content: " ";
       display: block;
       position: absolute;
@@ -61,8 +124,6 @@ header {
       background-repeat: no-repeat;
       background-position: bottom right;
     }
-    }
-
     img {
       display: block;
       width: 100%;
