@@ -8,6 +8,17 @@ use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
 
+add_action('init', function() {
+    register_post_meta( '', '_la_unlisted', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'boolean',
+        'auth_callback' => function() {
+            return current_user_can( 'edit_posts' );
+          }
+    ) );
+});
+
 /**
  * Theme assets
  */
