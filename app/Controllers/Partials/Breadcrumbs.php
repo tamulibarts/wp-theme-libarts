@@ -17,7 +17,6 @@ trait Breadcrumbs
             'title' => $p->post_title,
             'link' => get_page_link( $p )
           );
-          error_log( $p->post_title );
         }
       endif;
 
