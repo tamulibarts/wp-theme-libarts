@@ -59,7 +59,7 @@ trait SidebarMenu
 
     private function build_page_tree($post = null) {
       if(!$post) $post = get_post();
-      
+
       $children = get_posts( array(
         'post_parent' => $post->ID,
         'post_type' => 'page',
@@ -79,14 +79,11 @@ trait SidebarMenu
         'posts_per_page' => -1
       ));
       $children = array_reverse($children);
-      // error_log("Children: " . print_r($children, true));
-      
       $parent_id = wp_get_post_parent_id($post);
 
       $siblings = get_pages( array(
         'parent' => $parent_id
       ) );
-      
 
       $tree = array();
       // if($parent_id == 0) {
@@ -135,7 +132,6 @@ trait SidebarMenu
       }
 
       $content .= '</ul>';
-      
       return $content;
     }
 }
