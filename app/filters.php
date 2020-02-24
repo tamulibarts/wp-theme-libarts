@@ -187,10 +187,14 @@ add_action( 'save_post', function( $post_id=null, $post=null, $update=false ) {
         return;
     }
 
-    if( isset( $_POST['_la_unlisted'] ) ) {
-        update_post_meta($post_id, '_la_unlisted', $_POST['_la_unlisted']);
-    } else {
-        delete_post_meta($post_id, '_la_unlisted');
+    $type = get_post_type($post_id);
+
+    if( $type == 'directory_group') {
+        if( isset( $_POST['_la_unlisted'] ) ) {
+            update_post_meta($post_id, '_la_unlisted', $_POST['_la_unlisted']);
+        } else {
+            delete_post_meta($post_id, '_la_unlisted');
+        }
     }
   }
 );
