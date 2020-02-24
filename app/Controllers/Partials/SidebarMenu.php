@@ -60,15 +60,23 @@ trait SidebarMenu
     private function build_page_tree($post = null) {
       if(!$post) $post = get_post();
       
-      $children = get_pages( array(
-        'child_of' => $post->ID,
-        'meta_query' => [
-          [
-            'key' => '_la_unlisted',
-            'compare' => 'NOT EXISTS'
-          ]
-          ],
+      $children = get_posts( array(
+        'post_parent' => $post->ID,
+        'post_type' => 'page',
+        'meta_query' => array(
+          'relation' => 'OR',
+            [
+              'key' => '_la_unlisted',
+              'compare' => 'NOT EXISTS'
+            ],
+            [
+              'key' => '_la_unlisted',
+              'compare' => '!=',
+              'value' => 1
+            ]
+        ),
         'orderby' => 'menu_order',
+        'posts_per_page' => -1
       ));
       $children = array_reverse($children);
       // error_log("Children: " . print_r($children, true));
