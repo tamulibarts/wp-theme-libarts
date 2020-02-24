@@ -4,7 +4,7 @@
     <a href="https://facebook.com/sharer/sharer.php?u={{ urlencode( get_the_permalink() ) }}" target="_blank" rel="noopener" aria-label="Share this story on Facebook">
     Facebook
     </a>
-    
+
     <a href="https://twitter.com/intent/tweet/?text={{ urlencode( get_the_title() ) }}&amp;url={{ urlencode( get_the_permalink() ) }}" target="_blank" rel="noopener" aria-label="Share this story on Twitter">
     Twitter
     </a>
@@ -14,13 +14,25 @@
     </a>
   </div>
 
+  @if( $categories )
   <div class="tag-set">
-    <span>Tags:</span> 
+    <span>Categories:</span>
     <ul>
-        <li><a href="#">A Closer Look</a></li>
-        <li><a href="#">Bryan</a></li>
-        <li><a href="#">Former Student</a></li>
-        <li><a href="#">Political Science</a></li>
+      @foreach( $categories as $category)
+        <li><a href="{{ get_term_link($category) }}">{{ $category->name }}</a></li>
+      @endforeach
     </ul>
   </div>
+  @endif
+
+  @if( $tags )
+  <div class="tag-set">
+    <span>Tags:</span>
+    <ul>
+      @foreach( $tags as $tag)
+        <li><a href="{{ get_term_link($tag) }}">{{ $tag->name }}</a></li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
 </section>
