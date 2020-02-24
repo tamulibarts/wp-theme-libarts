@@ -46,30 +46,33 @@ header {
     display: flex;
     justify-content: flex-start;
 
-    a {
-      color: white;
-      &:visited {
-        color: white;
-      }
-      &:active {
-        color: red;
-      }
-      &:hover {
-        border-bottom: 2px solid red;
-      }
-    }
+    
     .tamulogo {
       border-right: 2px solid white;
       margin-right: 25px;
       a {
         display: flex;
         align-content: center;
+        border-bottom: none;
       }
       img {
         height: 100px;
       }
     }
     .unitlogo {
+      a {
+        color: white;
+        border-bottom: $maroon;
+        &:visited {
+          color: white;
+        }
+        &:active {
+          color: red;
+        }
+        &:hover {
+          border-bottom: 2px solid red;
+        }
+      }
       font-family: 'Open Sans';
       color: white;
       .major {
