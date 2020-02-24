@@ -4,7 +4,7 @@
     @foreach($breadcrumbs as $breadcrumb)
     <li>
     @if($breadcrumb->link)
-      <a href="{{$breadcrumb->link}}" {{ $breadcrumb->current ?: 'aria-current="true"' }}>{{$breadcrumb->title}}</a>
+      <a href="{{$breadcrumb->link}}" {{ $breadcrumb->current ?: 'aria-current="true"' }}>{!! $breadcrumb->title !!}</a>
     @else
       {{$breadcrumb->title}}
     @endif
